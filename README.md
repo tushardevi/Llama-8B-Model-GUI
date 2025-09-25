@@ -23,3 +23,12 @@ Before you begin, ensure you have:
 ```bash
 git clone https://github.com/tushardevi/Llama-8B-Model-GUI.git
 cd Llama-8B-Model-GUI
+
+
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+pip install -r requirements.txt
+
+python3 app.py
+
