@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coding prompt</title>
+    <style>
+        * .code-output {
+
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #61dafb;
+            margin: 15px 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            tab-size: 4;
+            -moz-tab-size: 4;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .code-output::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .code-output::-webkit-scrollbar-track {
+            background: #1e1e1e;
+            border-radius: 4px;
+        }
+
+        .code-output::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        .code-output::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+
+        /* Optional: Add line numbers */
+        .code-output.with-line-numbers {
+            counter-reset: line;
+            padding-left: 50px;
+        }
+
+        .code-output.with-line-numbers pre::before {
+            counter-increment: line;
+            content: counter(line);
+            display: inline-block;
+            width: 30px;
+            margin-right: 20px;
+            margin-left: -50px;
+            color: #6c6c6c;
+            text-align: right;
+            border-right: 1px solid #444;
+            padding-right: 10px;
+        }
+
+
+
+
+
+         .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #61dafb;
+            color: #1a1a1a;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .copy-button:hover {
+            background-color: #4fa8c5;
+            transform: translateY(-1px);
+        }
+
+        .copy-button:active {
+            transform: translateY(1px);
+        }
+
+        .copy-button.copied {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="copy-button" id="copyb">copy</button>
+    <div id = "out" class="code-output">
+        
+    // Your code here
+    print("Hello, World!")
+    def calculate(x, y):
+        return x + y
+</div>
+
+<script>
+    document.getElementById('copyb').addEventListener('click', function() {
+            const content = document.getElementById('out');
+            
+            // Create a range and select the content
+            const range = document.createRange();
+            range.selectNode(content);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges()
+
+    })
+
+</script>
+
+</body>
+</html>
